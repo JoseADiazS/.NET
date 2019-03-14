@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace SolucionFinanciera
 {
-    class LogicaCalculadora
+    internal class LogicaCalculadora
     {
         private ObjetoFinanciero datosCliente;
 
@@ -17,22 +12,22 @@ namespace SolucionFinanciera
         //{
         //};
 
-        
         /**
          * return double
          * params:
          * interesCompuesto: double
          * valorVenta:double
          * */
+
         public double calcularValorSaldo(double interesCompuesto, double valorVenta)
         {
             double valorSaldo = 0.0;
-            if(interesCompuesto != 0 && datosCliente.Saldo != 0)
+            if (interesCompuesto != 0 && datosCliente.Saldo != 0)
             {
-                Console.WriteLine("intereses compuestos: {0}",interesCompuesto);
+                Console.WriteLine("intereses compuestos: {0}", interesCompuesto);
                 Console.WriteLine("Saldo del cliente: " + datosCliente.Saldo);
 
-                valorSaldo = Math.Sqrt((interesCompuesto + 3 * valorVenta) / (4 * Math.Pow(interesCompuesto, 3))) / (3 *Math.Pow(interesCompuesto,8)-(2*datosCliente.Saldo));
+                valorSaldo = Math.Sqrt((interesCompuesto + 3 * valorVenta) / (4 * Math.Pow(interesCompuesto, 3))) / (3 * Math.Pow(interesCompuesto, 8) - (2 * datosCliente.Saldo));
 
                 Console.WriteLine("Resultado del cálculo: {0}", valorSaldo);
             }
@@ -47,11 +42,12 @@ namespace SolucionFinanciera
         /**
          * return double
          * */
+
         public double calcularBonoBeneficio()
         {
             double bono = 0.0;
 
-            if(datosCliente.Saldo > 10000 && datosCliente.Saldo <= 100000)
+            if (datosCliente.Saldo > 10000 && datosCliente.Saldo <= 100000)
             {
                 bono = (datosCliente.Saldo * 0.20);
             }

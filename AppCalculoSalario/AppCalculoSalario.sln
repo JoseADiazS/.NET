@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCalculoSalario", "AppCalculoSalario\AppCalculoSalario.csproj", "{2508331F-C9F8-44F8-B500-BBED5FD03804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCalculoSalarioTests", "AppCalculoSalarioTests\AppCalculoSalarioTests.csproj", "{88DF2A05-97AC-498E-B2CB-D6FFD9DFEE2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2508331F-C9F8-44F8-B500-BBED5FD03804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2508331F-C9F8-44F8-B500-BBED5FD03804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2508331F-C9F8-44F8-B500-BBED5FD03804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2508331F-C9F8-44F8-B500-BBED5FD03804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DF2A05-97AC-498E-B2CB-D6FFD9DFEE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DF2A05-97AC-498E-B2CB-D6FFD9DFEE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DF2A05-97AC-498E-B2CB-D6FFD9DFEE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DF2A05-97AC-498E-B2CB-D6FFD9DFEE2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8268C83-ECDB-4544-9EC8-DAF3231CA95C}
+	EndGlobalSection
+EndGlobal

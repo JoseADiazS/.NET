@@ -21,13 +21,13 @@ namespace SolucionFinanciera
 
         public double leerValorReal(string mensaje)
         {
-            Console.WriteLine(mensaje);
+            Console.Write(mensaje);
             return double.Parse(System.Console.ReadLine());
         }
 
         public string leerCadena(string mensaje)
         {
-            Console.WriteLine(mensaje);
+            Console.Write(mensaje);
             return System.Console.ReadLine();
         }
 
@@ -35,6 +35,7 @@ namespace SolucionFinanciera
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.Clear();
 
             double interesValorSaldo = 0.0;
             double interesCompuesto = 0.0;
@@ -55,7 +56,7 @@ namespace SolucionFinanciera
             interesValorSaldo = calculadora.calcularValorSaldo(interesCompuesto, valorVenta);
 
             Console.WriteLine("***********");
-            Console.WriteLine("Nombre cliente{0} - Numero cuenta{1}", datosClientes.NombreCliente, datosClientes.NumeroCuenta);
+            Console.WriteLine("Nombre cliente {0} - Numero cuenta{1}", datosClientes.NombreCliente, datosClientes.NumeroCuenta);
 
             Console.WriteLine("Valor del interes del saldo " + interesValorSaldo);
 
