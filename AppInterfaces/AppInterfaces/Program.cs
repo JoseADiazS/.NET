@@ -1,9 +1,17 @@
 ﻿using System;
 
+/**
+ * App para la implmentacion de interfaces en un traductor
+ * Jose Armando Diaz Segura
+ * Electiva .NET  2019-1
+ *
+ * */
+
 namespace AppInterfaces
 {
     public class Program
     {
+        /// <summary>  Metodo para imprimir el menu</summary>
         public void imprimirMenu()
         {
             System.Console.WriteLine("********************************************");
@@ -19,6 +27,7 @@ namespace AppInterfaces
         private static void Main(string[] args)
         {
             Program controlador = new Program();
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.Clear();
@@ -45,15 +54,20 @@ namespace AppInterfaces
                             break;
 
                         case 2:
-                            Console.WriteLine(ingles.traducir(palabraATraducir));
+
+                            idiomas = (Ingles)ingles;
+
+                            Console.WriteLine(idiomas.traducir(palabraATraducir));
                             break;
 
                         case 3:
-                            Console.WriteLine(portugues.traducir(palabraATraducir));
+                            idiomas = (Portugues)portugues;
+                            Console.WriteLine(idiomas.traducir(palabraATraducir));
                             break;
 
                         case 4:
-                            Console.WriteLine(suajini.traducir(palabraATraducir));
+                            idiomas = (Suajini)suajini;
+                            Console.WriteLine(idiomas.traducir(palabraATraducir));
                             break;
                     }
                 }

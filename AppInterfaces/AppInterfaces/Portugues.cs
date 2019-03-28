@@ -2,9 +2,14 @@
 {
     public class Portugues : Idiomas
     {
+        /// <summary>  Metodo que permite obtener una traduccion a portugues de la palabra ingresada</summary>
+        /// <param name="fraseTraducir">  La Frase a traducir</param>
+        /// <returns>La frase ingresada traducida al portugues</returns>
         public string traducir(string fraseTraducir)
         {
+            //Establecer que la frase sea reducida a minusculas
             fraseTraducir = fraseTraducir.ToLower();
+            //Bandera
             string bandera = "";
             if (fraseTraducir == "bonito dia")
             {

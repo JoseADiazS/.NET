@@ -1,5 +1,12 @@
 ﻿using System;
 
+/**
+ * Aplicacion para la aplicacion de herencia en figuras geometricas y sus atributos
+ * Author: Jose Armando Diaz Segura
+ * Electiva .NET 2019-1
+ *
+ * */
+
 namespace AppHerencias
 {
     internal class Program
@@ -39,7 +46,7 @@ namespace AppHerencias
             Console.WriteLine("El area del rectangulo es: " + controladorRectangulo.Area);
             Console.WriteLine("El perimetro del rectangulo es: " + controladorRectangulo.Perimetro);
             Console.WriteLine("La diagonal del rectangulo es: " + controladorRectangulo.obtenerDiagonal());
-            Console.WriteLine("El rectangulo es: " + controladorRectangulo.determinarSiEsCuadrado());
+            Console.WriteLine("Es: " + controladorRectangulo.determinarSiEsCuadrado() + " que el rectangulo sea un cuadrado");
             Console.WriteLine("*********************************************");
             Console.WriteLine("*********************************************");
             Console.WriteLine("Digite el radio del circulo: ");

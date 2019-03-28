@@ -2,9 +2,14 @@
 {
     public class Suajini : Idiomas
     {
+        /// <summary>  Metodo que permite obtener una traduccion al Suajini de la palabra ingresada</summary>
+        /// <param name="fraseTraducir">  La Frase a traducir</param>
+        /// <returns>La frase ingresada traducida a Suajini </returns>
         public string traducir(string fraseTraducir)
         {
+            //Establecer que la frase sea reducida a minusculas
             fraseTraducir = fraseTraducir.ToLower();
+            //Bandera
             string bandera = "";
             if (fraseTraducir == "bonito dia")
             {
