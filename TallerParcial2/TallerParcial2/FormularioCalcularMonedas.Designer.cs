@@ -50,6 +50,8 @@
             this.txtValBitcoins = new System.Windows.Forms.TextBox();
             this.txtDestinoSalida = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnAcercaDe = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,17 +78,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 180);
+            this.label3.Location = new System.Drawing.Point(422, 180);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 21);
+            this.label3.Size = new System.Drawing.Size(137, 21);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Valor Destino:";
+            this.label3.Text = "Moneda Destino:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(415, 119);
+            this.label4.Location = new System.Drawing.Point(34, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 21);
             this.label4.TabIndex = 3;
@@ -96,7 +98,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(415, 180);
+            this.label5.Location = new System.Drawing.Point(422, 121);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 21);
             this.label5.TabIndex = 4;
@@ -105,9 +107,10 @@
             // OD
             // 
             this.OD.AutoSize = true;
+            this.OD.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OD.Location = new System.Drawing.Point(245, 252);
             this.OD.Name = "OD";
-            this.OD.Size = new System.Drawing.Size(124, 17);
+            this.OD.Size = new System.Drawing.Size(136, 19);
             this.OD.TabIndex = 5;
             this.OD.Text = "De Origen a Destino ";
             this.OD.UseVisualStyleBackColor = true;
@@ -125,15 +128,17 @@
             // DO
             // 
             this.DO.AutoSize = true;
+            this.DO.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DO.Location = new System.Drawing.Point(245, 275);
             this.DO.Name = "DO";
-            this.DO.Size = new System.Drawing.Size(121, 17);
+            this.DO.Size = new System.Drawing.Size(133, 19);
             this.DO.TabIndex = 7;
             this.DO.Text = "De Destino a Origen";
             this.DO.UseVisualStyleBackColor = true;
             // 
             // btnCalcularConversion
             // 
+            this.btnCalcularConversion.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcularConversion.Location = new System.Drawing.Point(467, 249);
             this.btnCalcularConversion.Name = "btnCalcularConversion";
             this.btnCalcularConversion.Size = new System.Drawing.Size(132, 36);
@@ -144,6 +149,7 @@
             // 
             // btnLimpiarCampos
             // 
+            this.btnLimpiarCampos.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarCampos.Location = new System.Drawing.Point(624, 247);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
             this.btnLimpiarCampos.Size = new System.Drawing.Size(132, 36);
@@ -155,20 +161,22 @@
             // cbxOrigen
             // 
             this.cbxOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxOrigen.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxOrigen.Items.AddRange(new object[] {
             "Dólares Americanos",
             "Euros",
             "Yuanes (Renminbi)",
             "Yenes Japoneses",
             "Pesos Colombianos"});
-            this.cbxOrigen.Location = new System.Drawing.Point(575, 119);
+            this.cbxOrigen.Location = new System.Drawing.Point(175, 180);
             this.cbxOrigen.Name = "cbxOrigen";
-            this.cbxOrigen.Size = new System.Drawing.Size(140, 21);
+            this.cbxOrigen.Size = new System.Drawing.Size(140, 23);
             this.cbxOrigen.TabIndex = 10;
             // 
             // cbxDestino
             // 
             this.cbxDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDestino.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDestino.FormattingEnabled = true;
             this.cbxDestino.Items.AddRange(new object[] {
             "Dólares Americanos",
@@ -176,23 +184,25 @@
             "Yuanes (Renminbi)",
             "Yenes Japoneses",
             "Pesos Colombianos"});
-            this.cbxDestino.Location = new System.Drawing.Point(155, 180);
+            this.cbxDestino.Location = new System.Drawing.Point(584, 180);
             this.cbxDestino.Name = "cbxDestino";
-            this.cbxDestino.Size = new System.Drawing.Size(140, 21);
+            this.cbxDestino.Size = new System.Drawing.Size(140, 23);
             this.cbxDestino.TabIndex = 11;
             // 
             // txtOrigen
             // 
-            this.txtOrigen.Location = new System.Drawing.Point(155, 121);
+            this.txtOrigen.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrigen.Location = new System.Drawing.Point(175, 123);
             this.txtOrigen.Name = "txtOrigen";
-            this.txtOrigen.Size = new System.Drawing.Size(140, 20);
+            this.txtOrigen.Size = new System.Drawing.Size(140, 22);
             this.txtOrigen.TabIndex = 12;
             // 
             // txtTasa
             // 
-            this.txtTasa.Location = new System.Drawing.Point(575, 180);
+            this.txtTasa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTasa.Location = new System.Drawing.Point(584, 123);
             this.txtTasa.Name = "txtTasa";
-            this.txtTasa.Size = new System.Drawing.Size(140, 20);
+            this.txtTasa.Size = new System.Drawing.Size(140, 22);
             this.txtTasa.TabIndex = 13;
             // 
             // label7
@@ -236,18 +246,20 @@
             // 
             // txtDestinoConversion
             // 
+            this.txtDestinoConversion.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDestinoConversion.Location = new System.Drawing.Point(193, 424);
             this.txtDestinoConversion.Name = "txtDestinoConversion";
             this.txtDestinoConversion.ReadOnly = true;
-            this.txtDestinoConversion.Size = new System.Drawing.Size(164, 20);
+            this.txtDestinoConversion.Size = new System.Drawing.Size(164, 22);
             this.txtDestinoConversion.TabIndex = 18;
             // 
             // txtValBitcoins
             // 
+            this.txtValBitcoins.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValBitcoins.Location = new System.Drawing.Point(193, 466);
             this.txtValBitcoins.Name = "txtValBitcoins";
             this.txtValBitcoins.ReadOnly = true;
-            this.txtValBitcoins.Size = new System.Drawing.Size(164, 20);
+            this.txtValBitcoins.Size = new System.Drawing.Size(164, 22);
             this.txtValBitcoins.TabIndex = 19;
             // 
             // txtDestinoSalida
@@ -269,11 +281,36 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Resultados de Conversión";
             // 
+            // btnAcercaDe
+            // 
+            this.btnAcercaDe.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcercaDe.Location = new System.Drawing.Point(467, 377);
+            this.btnAcercaDe.Name = "btnAcercaDe";
+            this.btnAcercaDe.Size = new System.Drawing.Size(132, 36);
+            this.btnAcercaDe.TabIndex = 22;
+            this.btnAcercaDe.Text = "Acerca De";
+            this.btnAcercaDe.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(624, 377);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(132, 36);
+            this.btnSalir.TabIndex = 23;
+            this.btnSalir.Text = "Salir ";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FormularioCalcularMonedas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 498);
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.ClientSize = new System.Drawing.Size(800, 520);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnAcercaDe);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDestinoSalida);
             this.Controls.Add(this.txtValBitcoins);
@@ -296,8 +333,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormularioCalcularMonedas";
-            this.Text = "Form1";
+            this.Text = "ConversiónDivisas";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,6 +366,8 @@
         private System.Windows.Forms.TextBox txtValBitcoins;
         private System.Windows.Forms.Label txtDestinoSalida;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnAcercaDe;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 
