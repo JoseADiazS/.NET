@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Taller1_TercerCorte
+namespace TallerWPF
 {
     /// <summary>
     /// Lógica de interacción para App.xaml

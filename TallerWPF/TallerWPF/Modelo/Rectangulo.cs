@@ -1,7 +1,6 @@
 ﻿using System;
 
-namespace AppHerencias
-{
+namespace TallerWPF
     internal class Rectangulo : Figura
     {
         /// <summary>El ancho del rectangulo</summary>

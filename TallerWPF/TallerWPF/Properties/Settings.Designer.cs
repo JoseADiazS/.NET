@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Taller1_TercerCorte.Properties
+namespace TallerWPF.Properties
 {
 
 

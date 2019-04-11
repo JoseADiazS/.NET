@@ -1,4 +1,4 @@
-﻿namespace AppHerencias
+﻿namespace TallerWPF
 {
     internal class Figura
     {

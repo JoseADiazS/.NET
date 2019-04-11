@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AppHerencias
+namespace TallerWPF
 {
     internal class Circulo : Figura
     {
