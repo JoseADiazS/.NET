@@ -20,9 +20,18 @@ namespace TallerWPF
     /// </summary>
     public partial class Graficas : Page
     {
-        public Graficas()
+        public Graficas(double radio,double lado,double ancho,double largo,Color color)
         {
             InitializeComponent();
+            this.circulo.Height = radio;
+            this.circulo.Width = radio;
+            this.circulo.Fill = new SolidColorBrush(color);
+            this.cuadrado.Height = lado;
+            this.cuadrado.Height = lado;
+            this.cuadrado.Fill = new SolidColorBrush(color);
+            this.rectangulo.Height = largo;
+            this.rectangulo.Width = ancho;
+            this.rectangulo.Fill = new SolidColorBrush(color);
         }
     }
 }

@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TallerWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ExpenseItHome">
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="FormularioSeleccion">
 
-    <Grid>
+    <Grid Height="500" VerticalAlignment="Top">
         <Label x:Name="label1" Content="Graficador de Figuras Geometricas" HorizontalAlignment="Left" Margin="49,40,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold"/>
         <Label x:Name="label2" Content="Circulo:" HorizontalAlignment="Left" Margin="49,109,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="label3" Content="Cuadrado:" HorizontalAlignment="Left" Margin="277,109,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold"/>
@@ -21,7 +21,15 @@
         <TextBox x:Name="txtLado" HorizontalAlignment="Left" Height="28" Margin="329,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtAncho" HorizontalAlignment="Left" Height="28" Margin="589,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtLargo" HorizontalAlignment="Left" Height="28" Margin="589,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnGraficar" Content="Graficar" HorizontalAlignment="Left" Margin="207,319,0,0" VerticalAlignment="Top" Width="103" Height="41" FontFamily="Times New Roman" FontSize="20" Click="BtnGraficar_Click"/>
-        <Button x:Name="btnLimpiar" Content="Limpiar Campos" HorizontalAlignment="Left" Margin="451,319,0,0" VerticalAlignment="Top" Width="175" Height="41" FontFamily="Times New Roman" FontSize="20"/>
+        <Button x:Name="btnGraficar" Content="Graficar" HorizontalAlignment="Left" Margin="161,376,0,0" VerticalAlignment="Top" Width="103" Height="41" FontFamily="Times New Roman" FontSize="20" Click="BtnGraficar_Click"/>
+        <Button x:Name="btnLimpiar" Content="Limpiar Campos" HorizontalAlignment="Left" Margin="534,376,0,0" VerticalAlignment="Top" Width="175" Height="41" FontFamily="Times New Roman" FontSize="20" Click="BtnLimpiar_Click"/>
+        <ComboBox HorizontalAlignment="Left" Margin="114,260,0,0" VerticalAlignment="Top" Width="120" Name="cbxColor">
+            <ComboBoxItem Content="Rojo" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Azul" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Amarillo" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Negro" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Verde" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Label x:Name="label9" Content="Color:" HorizontalAlignment="Left" Margin="44,260,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
     </Grid>
 </Page>

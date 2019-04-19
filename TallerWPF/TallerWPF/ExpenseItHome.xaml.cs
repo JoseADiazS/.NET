@@ -24,17 +24,64 @@ namespace TallerWPF
         {
             InitializeComponent();
         }
-
         private void BtnGraficar_Click(object sender, RoutedEventArgs e)
         {
-            Circulo circulo = new Circulo();
-            Cuadrado cuadrado = new Cuadrado();
-            Rectangulo rectangulo = new Rectangulo();
+            try
+            {
+                Circulo circulo = new Circulo();
+                Cuadrado cuadrado = new Cuadrado();
+                Rectangulo rectangulo = new Rectangulo();
+                circulo.Radio = Double.Parse(txtRadio.Text);
+                cuadrado.Lado = Double.Parse(txtLado.Text);
+                rectangulo.Ancho = Double.Parse(txtAncho.Text);
+                rectangulo.Largo = Double.Parse(txtLargo.Text);
+                var color = (ComboBoxItem)cbxColor.SelectedItem;
+                string colorName = color.Content.ToString();
+                Graficas graficas = new Graficas(circulo.Radio, cuadrado.Lado, rectangulo.Ancho, rectangulo.Largo, obtenerColor(colorName));
+                this.NavigationService.Navigate(graficas);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Los campos no pueden estar vacios");
+            }
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show("Debe seleccionar un color");
+            }
 
-            circulo.Radio = Double.Parse(txtRadio.Text);
-            cuadrado.Lado = Double.Parse(txtLado.Text);
-            rectangulo.Ancho = Double.Parse(txtAncho.Text);
-            rectangulo.Largo = Double.Parse(txtLargo.Text);
+        }
+        private Color obtenerColor(string color)
+        {
+            Color colorEscogido = Colors.White;
+
+            switch (color)
+            {
+                case "Rojo":
+                    colorEscogido = Colors.Red;
+                    break;
+                case "Verde":
+                    colorEscogido = Colors.Green;
+                    break;
+                case "Amarillo":
+                    colorEscogido = Colors.Yellow;
+                    break;
+                case "Negro":
+                    colorEscogido = Colors.Black;
+                    break;
+                case "Azul":
+                    colorEscogido = Colors.Blue;
+                    break;
+            }
+            return (colorEscogido);
+        }
+
+        private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            txtAncho.Text = "";
+            txtLargo.Text = "";
+            txtLado.Text = "";
+            txtRadio.Text = "";
+            cbxColor.SelectedIndex = -1;
         }
     }
 }

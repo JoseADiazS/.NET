@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TallerWPF
+namespace TallerWPF { 
     internal class Rectangulo : Figura
     {
         /// <summary>El ancho del rectangulo</summary>

@@ -8,7 +8,24 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Graficas">
 
-    <Grid>
-        
-    </Grid>
+    <Canvas Margin="10,10,10,0" >
+        <Rectangle x:Name="rectangulo"
+    Width="100"
+    Height="50"
+    Fill="Blue"
+    Canvas.Left="618"
+    Canvas.Top="184" />
+        <Rectangle x:Name="cuadrado"
+    Width="100"
+    Height="100"
+    Fill="Blue"
+    Canvas.Left="347"
+    Canvas.Top="159" />
+        <Ellipse x:Name="circulo"
+    Width="50"
+    Height="50"
+    Fill="Blue"
+    Canvas.Left="60"
+    Canvas.Top="184"/>
+    </Canvas>
 </Page>
