@@ -1,0 +1,21 @@
+﻿<Page x:Class="Taller2_3Corte.Consultar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Taller2_3Corte"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="Consultar">
+
+    <Grid>
+        <Button x:Name="btnConsultaCategorias" Content="Consulta Categorias" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="172" FontFamily=" Times New Roman" FontSize="18 px" Click="BtnConsultaCategorias_Click"/>
+        <Button x:Name="btnConsultaProovedores" Content="Consulta Proovedores" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="172" FontFamily=" Times New Roman" FontSize="18 px" Click="BtnConsultaProovedores_Click"/>
+        <DataGrid x:Name="dtaGridResultado" HorizontalAlignment="Left" Height="500" Margin="187,10,0,0" VerticalAlignment="Top" Width="800" FontFamily="Times New Roman" AlternatingRowBackground="#FFC4B0B0"/>
+        <Button x:Name="btnConsultaProductos" Content="Consulta Productos" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top" Width="172" FontFamily=" Times New Roman" FontSize="18 px" Click="BtnConsultaProductos_Click" />
+        <Button x:Name="btnConsultaPunto9" Content="Consulta Punto9" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top" Width="172" FontFamily=" Times New Roman" FontSize="18 px" Height="29" Click="BtnConsultaPunto9_Click"/>
+        <ComboBox x:Name="cbxProovedores" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="172" FontFamily="Times New Roman" FontSize="15" />
+        <Button x:Name="btnConsultaProovedorEspec" Content="Consulta Por Proovedor" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Width="172" FontFamily=" Times New Roman" FontSize="18 px" Height="29" Click="BtnConsultaProovedorEspec_Click" />
+
+    </Grid>
+</Page>
