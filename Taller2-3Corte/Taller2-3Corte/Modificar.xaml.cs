@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,21 +17,19 @@ using System.Windows.Shapes;
 namespace Taller2_3Corte
 {
     /// <summary>
-    /// Lógica de interacción para Crear.xaml
+    /// Lógica de interacción para Modificar.xaml
     /// </summary>
-    public partial class Crear : Page
+    public partial class Modificar : Page
     {
         private static Controlador ControladorAccesoDatos;
-
-        public object DialogResult { get; private set; }
-
-        public Crear(string rutaServidor)
+        public Modificar(string rutaServidor)
         {
             InitializeComponent();
             string connectionString =
                 "Data Source=" + rutaServidor + "; Initial Catalog=Northwind; Integrated Security = False; User Id = sa; Password = 12345678; MultipleActiveResult" +
                 "Sets = True";
             ControladorAccesoDatos = new Controlador(connectionString);
+
             var dttest = ControladorAccesoDatos.GetProovedoresV2();
             cbxProovedor.ItemsSource = dttest.DefaultView;
             cbxProovedor.DisplayMemberPath = "CompanyName";
@@ -43,14 +40,33 @@ namespace Taller2_3Corte
             cbxCategoria.SelectedValuePath = "CategoryID";
         }
 
-        private void BtnCrear_Click(object sender, RoutedEventArgs e)
+        private void BtnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            int id = Int32.Parse(txtIdModificar.Text);
+            RecordVO busqueda = ControladorAccesoDatos.consultarRegistroRecord(id);
+            txtNombreProducto.Text = busqueda.ProductName;
+            txtPrecioUnitario.Text = busqueda.UnitPrice.ToString();
+            txtUnidadesxOrden.Text = busqueda.UnitsOnOrder.ToString();
+            txtCantidadxUnidad.Text = busqueda.QuantityPerUnit;
+            txtNivelReorg.Text = busqueda.ReorderLevel.ToString();
+            if(busqueda.Discontinued == true)
+            {
+                rbtnSi.IsChecked = true;
+            }
+            else
+            {
+                rbtnNo.IsChecked = true;
+            }
+        }
+
+        private void BtnModificar_Click(object sender, RoutedEventArgs e)
         {
             bool seInserto = false;
-
             try
             {
                 string nomProducto = txtNombreProducto.Text;
                 DataRowView proov = (DataRowView)cbxProovedor.SelectedItem;
+                
                 int proovedor = GetProovedor(proov.Row.ItemArray[0].ToString());
                 DataRowView cat = (DataRowView)cbxCategoria.SelectedItem;
                 int categoria = GetCategoria(cat.Row.ItemArray[0].ToString());
@@ -59,10 +75,11 @@ namespace Taller2_3Corte
                 int undxOrden = Int32.Parse(txtUnidadesxOrden.Text);
                 int nivelReorg = Int32.Parse(txtNivelReorg.Text);
                 byte estaDescon = EstaDescontinuado();
-                MessageBoxResult result = MessageBox.Show("¿Esta seguro que desea almacenar el registro del producto?", "Confirmación Registro", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                int id = Int32.Parse(txtIdModificar.Text);
+                MessageBoxResult result = MessageBox.Show("¿Esta seguro que desea modificar el registro del producto?", "Confirmación Registro", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    seInserto = ControladorAccesoDatos.insertarRegistro(nomProducto, proovedor, categoria, precioUnd, cantidadxUnd, undxOrden, nivelReorg, estaDescon); 
+                    seInserto = ControladorAccesoDatos.modificarRegistro(nomProducto, proovedor, categoria, precioUnd, cantidadxUnd, undxOrden, nivelReorg, estaDescon,id);
                 }
                 else if (result == MessageBoxResult.No)
                 {
@@ -72,9 +89,7 @@ namespace Taller2_3Corte
                 {
                     MessageBox.Show("Se inserto Correctamente");
                 }
-
             }
-
             catch (NullReferenceException errorInsertar)
             {
                 MessageBox.Show("Debe seleccionar un proovedor y categoria");
@@ -83,22 +98,15 @@ namespace Taller2_3Corte
             {
                 MessageBox.Show("Los campos no pueden estar vacios");
             }
-           
-            
-            //Limpiamos los controles
-            // this.txt_Name.Text = "";
-            //this.sel_Departamentos.SelectedIndex = 0;
-
-
         }
-
         public Byte EstaDescontinuado()
         {
             Byte bandera = 0;
             if ((bool)rbtnSi.IsChecked)
             {
                 bandera = 1;
-            }else if ((bool)rbtnNo.IsChecked)
+            }
+            else if ((bool)rbtnNo.IsChecked)
             {
                 bandera = 0;
             }
@@ -198,8 +206,8 @@ namespace Taller2_3Corte
                     break;
             }
             return bandera;
-           
-        } 
+
+        }
         public int GetCategoria(string nombreCategoria)
         {
             int bandera = 0;

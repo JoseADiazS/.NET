@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Taller2_3Corte;
-
+//Author Jose Armando Diaz Segura
 namespace TallerADOyWPF
 {
     /// <summary>
@@ -36,6 +36,12 @@ namespace TallerADOyWPF
         {
             Consultar consultar = new Consultar(txtRutaServidor.Text);
             this.NavigationService.Navigate(consultar);
+        }
+
+        private void BtnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            Modificar modificar = new Modificar(txtRutaServidor.Text);
+            this.NavigationService.Navigate(modificar);
         }
     }
 }

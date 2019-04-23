@@ -11,7 +11,7 @@
         <Label Name="label1" Content="Aplicación conexion a base de datos con ADO.NET" HorizontalAlignment="Left" Margin="163,38,0,0" VerticalAlignment="Top" FontSize="21" FontFamily="Times New Roman"/>
         <Button Name="label2" Content="Inicio" HorizontalAlignment="Left" Margin="66,121,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Times New Roman"/>
         <Button Name="btnCrear" Content="Crear Registro" HorizontalAlignment="Left" Margin="66,173,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Times New Roman" Click="Label3_Click"/>
-        <Button Name="btnModificar" Content="Modificar Registro" HorizontalAlignment="Left" Margin="66,220,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Times New Roman"/>
+        <Button Name="btnModificar" Content="Modificar Registro" HorizontalAlignment="Left" Margin="66,220,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Times New Roman" Click="BtnModificar_Click"/>
         <Button Name="btnConsultar" Content="Consultar Registro" HorizontalAlignment="Left" Margin="66,270,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Times New Roman" Click="BtnConsultar_Click"/>
         <Button Name="btnEliminar" Content="Eliminar Registro" HorizontalAlignment="Left" Margin="66,320,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Times New Roman"/>
         <TextBox x:Name="txtRutaServidor" HorizontalAlignment="Left" Height="29" Margin="279,216,0,0" TextWrapping="Wrap" Text="DESKTOP-41TLGQ9\SQLEXPRESS" VerticalAlignment="Top" Width="188"/>

@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Author Jose Armando Diaz Segura
 namespace Taller2_3Corte
 {
     class Controlador
@@ -319,16 +319,23 @@ namespace Taller2_3Corte
         //************************************************************************
         //************************************************************************
         //Método para realizar la modificación del registro
-        public bool modificarRegistro(string nombre, string estado, int id)
+        public bool modificarRegistro(string nomProducto, int proovedor, int categoria, double precioUnd, string cantidadxUnd, int undxOrden, int nivelReorg, byte estaDescon,int Id)
         {
             bool seModifico = false;
             try
             {
-                cmd = new SqlCommand("update tbl_Record set Name=@name,State=@state where ID=@id", con);
+                cmd = new SqlCommand("UPDATE dbo.Products SET ProductName = @productName,SupplierID = @supplierID,CategoryID = categoryID,UnitPrice = @unitPrice,QuantityPerUnit = @QuantxUnit," +
+                    "UnitsOnOrder = @undOrder,ReorderLevel = @reordLevel,Discontinued = @discont where ProductID = @id;", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@name", nombre);
-                cmd.Parameters.AddWithValue("@state", estado);
+                cmd.Parameters.AddWithValue("@productName", nomProducto);
+                cmd.Parameters.AddWithValue("@supplierID", proovedor);
+                cmd.Parameters.AddWithValue("@categoryID", categoria);
+                cmd.Parameters.AddWithValue("@unitPrice", precioUnd);
+                cmd.Parameters.AddWithValue("@QuantxUnit", cantidadxUnd);
+                cmd.Parameters.AddWithValue("@undOrder", undxOrden);
+                cmd.Parameters.AddWithValue("@reordLevel", nivelReorg);
+                cmd.Parameters.AddWithValue("@discont", estaDescon);
+                cmd.Parameters.AddWithValue("@id", Id);
                 cmd.ExecuteNonQuery();
                 seModifico = true;
             }
@@ -393,7 +400,7 @@ namespace Taller2_3Corte
         //************************************************************************
         //************************************************************************
         //************************************************************************
-        /*public DataTable rellenarDatosDataSource()
+        public DataTable rellenarDatosDataSource()
         {
             DataTable tablaDatos = new DataTable();
             adapt = new SqlDataAdapter("select * from dbo.tbl_Record", con);
@@ -405,20 +412,22 @@ namespace Taller2_3Corte
         //************************************************************************
         //************************************************************************
         //************************************************************************
-        public RecordVO consultarRegistroRecord(string idRegistro)
+        public RecordVO consultarRegistroRecord(int idProducto)
         {
             RecordVO registroConsultado = new RecordVO();
             string queryString =
-            "select Name, State from dbo.tbl_Record where id = @id";
+            "select A.ProductName,B.CompanyName,C.CategoryName,A.UnitPrice,A.QuantityPerUnit,A.UnitsOnOrder,A.ReorderLevel,A.Discontinued from dbo.Products A " +
+            "INNER JOIN dbo.Suppliers B On A.SupplierID = B.SupplierID " +
+            "INNER JOIN dbo.Categories C on A.CategoryId = C.CategoryID where A.ProductID = @id;";
             SqlCommand command = null;
             SqlDataReader cursor = null;
 
-
+            //currentitem.row.itemarray
             try
             {
                 con.Open();
                 command = new SqlCommand(queryString, con);
-                command.Parameters.AddWithValue("@id", idRegistro);
+                command.Parameters.AddWithValue("@id", idProducto);
 
                 //Recorremos el cursor de la consulta para obtener
                 //los datos usando un sqlDataReader
@@ -428,13 +437,19 @@ namespace Taller2_3Corte
                 {
                     while (cursor.Read())
                     {
-                        registroConsultado.Nombre = cursor.GetString(0);
-                        registroConsultado.IdEstado = cursor.GetInt32(1);
+                        registroConsultado.ProductName = cursor.GetString(0);
+                        registroConsultado.CompanyName = cursor.GetString(1);
+                        registroConsultado.CategoryName = cursor.GetString(2);
+                        registroConsultado.UnitPrice = (Double)cursor.GetSqlMoney(3).ToSqlDouble();
+                        registroConsultado.QuantityPerUnit = cursor.GetString(4);
+                        registroConsultado.UnitsOnOrder = cursor.GetInt16(5);
+                        registroConsultado.ReorderLevel = cursor.GetInt16(6);
+                        registroConsultado.Discontinued = cursor.GetBoolean(7);
                     }
 
                     //Verificamos los datos
-                    System.Diagnostics.Debug.WriteLine("NOMBRE = " + registroConsultado.Nombre
-                        + " ID DEPTO = " + registroConsultado.IdEstado);
+                   //System.Diagnostics.Debug.WriteLine("NOMBRE = " + registroConsultado.Nombre
+                     //   + " ID DEPTO = " + registroConsultado.IdEstado);
                 }
             }
 
@@ -442,8 +457,8 @@ namespace Taller2_3Corte
             {
                 System.Diagnostics.Debug.WriteLine("Error de consulta: " + errorLectura.Message);
                 RecordVO registroVacio = new RecordVO();
-                registroVacio.Nombre = "SIN REGISTRO";
-                registroVacio.IdEstado = 0;
+                //registroVacio.Nombre = "SIN REGISTRO";
+                //registroVacio.IdEstado = 0;
                 return (registroVacio);
             }
 
@@ -462,6 +477,6 @@ namespace Taller2_3Corte
             }
 
             return (registroConsultado);
-        }*/
+        }
     }
 }
