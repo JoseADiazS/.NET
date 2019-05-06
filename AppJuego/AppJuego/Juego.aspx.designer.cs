@@ -49,6 +49,15 @@ namespace AppJuego {
         protected global::System.Web.UI.WebControls.Button btnCodificarText;
         
         /// <summary>
+        /// Control btnLimpiarCodificador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiarCodificador;
+        
+        /// <summary>
         /// Control mensajeCodificado.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace AppJuego {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDecodificarText;
+        
+        /// <summary>
+        /// Control btnLimpiarDeco.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiarDeco;
         
         /// <summary>
         /// Control txtDecodificacion.

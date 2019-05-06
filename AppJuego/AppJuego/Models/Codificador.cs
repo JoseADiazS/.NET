@@ -35,7 +35,7 @@ namespace AppJuego.Models
                 char[] vacio = new char[palabra.Length];
                 return vacio;
             }
-            return (arregloLetras);
+            return (arregloLetras); 
         }
 
         public double codificarLetra(char letra, char letraPista)
@@ -72,8 +72,10 @@ namespace AppJuego.Models
             string bandera ="";
             foreach (double i in cadena)
             {
-                bandera += i + "-" ;
+               
+                bandera += i + "-";
             }
+            bandera = bandera.Substring(0, bandera.Length - 1);
             return bandera;
         }
     }

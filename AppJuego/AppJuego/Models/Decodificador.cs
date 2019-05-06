@@ -17,7 +17,7 @@ namespace AppJuego.Models
             double bandera2 = 0.0;
             string bandera3 = "";
             List<Double> bandera = new List<double>();
-            for(int i = 0; i < cadena.Length; i++)
+            for(int i = 0; i <= cadena.Length - 1; i++)
             {
                 
                 if (cadena[i] >= '0' && cadena[i] <= '9' || cadena[i] == ',')
@@ -31,6 +31,8 @@ namespace AppJuego.Models
                     bandera3 = "";
                 }
             }
+            bandera2 = Double.Parse(bandera3);
+            bandera.Add(bandera2);
             return bandera.ToArray();
         }
 
@@ -40,8 +42,9 @@ namespace AppJuego.Models
             double letrapista = getCodigoLetra(letraPista);
             for(int i = 0;i < cadena.Length; i++)
             {
-                double codigo = ((2 * getCodigoLetra2(cadena[i], letraPista)) - letrapista);
-                bandera += getCodigoLetra2(codigo, letraPista);
+                double codigo = ((2 * cadena[i])- letrapista);
+                var codigoletra = getCodigoLetra2(codigo,letraPista);
+                bandera += codigoletra;
             }
             return bandera;
         }
@@ -62,11 +65,13 @@ namespace AppJuego.Models
         {
             double letraPista = getCodigoLetra(letrapista);
             char bandera = 'a';
+            int letracodificada2 = (int)letracodificada;
             for (int i = 0; i < alfabeto.Length; i++)
             {
-                if (letracodificada == codigos[i])
+                if (letracodificada2 == codigos[i])
                 {
                     bandera = alfabeto[i];
+                    break;
                 }
             }
             return bandera;

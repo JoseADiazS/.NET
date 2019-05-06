@@ -35,5 +35,17 @@ namespace AppJuego
             string codigo = decodificador.obtenerPalabra(cadena2,letraPista);
             txtDecodificacion.Text = codigo;
         }
+
+        protected void btnLimpiarDeco_Click(object sender, EventArgs e)
+        {
+            cadenaADecodificar.Text = "";
+            dropListLetraPistaDecod.SelectedIndex = -1;
+        }
+
+        protected void btnLimpiarCodificador_Click(object sender, EventArgs e)
+        {
+            txtPalabraCodificar.Text = "";
+            dropListLetraPistaCod.SelectedIndex = -1;
+        }
     }
 }
