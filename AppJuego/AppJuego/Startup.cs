@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-[assembly: OwinStartup(typeof(AppJuego.signalr.Startup))]
-namespace AppJuego.signalr
+[assembly: OwinStartup(typeof(AppJuego.Startup))]
+namespace AppJuego
 {
     public class Startup
     {
