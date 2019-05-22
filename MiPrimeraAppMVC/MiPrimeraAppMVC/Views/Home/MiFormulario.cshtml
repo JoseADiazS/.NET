@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "MiFormulario";
+}
+
+<h2>MiFormulario</h2>
+
+<div id="datosFormularios">
+    <table>
+        <tr>
+            <td>
+                <label id="etiqueta1">Valor1:</label>
+            </td>
+            <td>
+                @ViewBag.valor1
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="etiqueta2">Valor2:</label>
+            </td>
+            <td>
+                @ViewBag.valor2
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    @Html.ActionLink("Regresar a la pagina principal", "Index", "Home")
+</div>

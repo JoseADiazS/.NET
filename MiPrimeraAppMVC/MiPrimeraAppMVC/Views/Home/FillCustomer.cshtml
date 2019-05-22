@@ -1,0 +1,80 @@
+﻿@model MiPrimeraAppMVC.Models.DatosContacto
+@{
+    //**********************************************************
+    //**********************************************************
+    //**********************************************************
+    /*  Implementación de página Razor para la presentación de los datos
+     *  Capturados desde el Request del procesamiento de la página de inicio
+     *  Curso de Desarrollo de Aplicaciones en .NET Framework
+     *  Universidad EAN
+     *  Vicerrectoría de Extensión y Proyección Social
+     *  Ing. Jaime Alberto Gutiérrez Mejía
+     *  2018-II
+     */
+    //**********************************************************
+    //**********************************************************
+    //**********************************************************
+}
+@{
+    ViewBag.Title = "Página de Presentación de los Datos";
+}
+<!-- ********************************************************* -->
+<!-- ********************************************************* -->
+<!-- ********************************************************* -->
+<div id="formularioConsulta" style="padding:20px;">
+    <!--Contenido del formulario de consulta de registros-->
+    <h2>Procesamiento de Datos de la Página Razor a partir de la información capturada desde el Request de un Formulario CSHTML que envía los datos por POST</h2>
+    <br />
+    <table id="tablaVistaCadenas" border="1" style="width:100%" cellpadding="10">
+        <tr>
+            <td style="width: 143px">
+                <label id="lbl_Code" for="txt_Code">Código Empleado:</label>
+            </td>
+            <td>
+                <label id="txt_Code" name="txt_Code"><b>@Model.Code</b></label>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 143px">
+                <label id="lbl_Nombre" for="txt_Nombre">Nombre Empleado:</label>
+            </td>
+            <td>
+                <label id="txt_Nombre" name="txt_Nombre"><b>@Model.Nombre</b></label>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 143px">
+                <label id="lbl_Edad" for="txt_Edad">Edad Empleado:</label>
+            </td>
+            <td>
+                <label id="txt_Edad" name="txt_Edad"><b>@Model.Edad</b></label>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 143px">
+                <label id="lbl_Salario" for="txt_Salario">Salario Empleado:</label>
+            </td>
+            <td>
+                <label id="txt_Salario" name="txt_Salario"><b>@Model.Salario</b></label>
+            </td>
+        </tr>
+        <tr>
+            <td><label id="tipoEmpleado">Tipo de Empleado</label></td>
+            <td>
+                @if (Model.Salario > 100000)
+                {
+                    <b><p>Empleado privilegiado</p></b>
+                }
+                else
+                {
+                    <b><p>Empleado convencional</p></b>
+                }
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <div>
+        @Html.ActionLink("Regresar a la Página Principal", "FormaCaptura", "Home")
+    </div>
+

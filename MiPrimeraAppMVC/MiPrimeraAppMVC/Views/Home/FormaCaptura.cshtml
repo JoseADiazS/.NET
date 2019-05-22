@@ -1,0 +1,92 @@
+﻿@model MiPrimeraAppMVC.Models.DatosContacto
+@{
+    //**********************************************************
+    //**********************************************************
+    //**********************************************************
+    /*  Implementación de página Razor para la captura de datos
+     *  Curso de Desarrollo de Aplicaciones en .NET Framework
+     *  Universidad EAN
+     *  Vicerrectoría de Extensión y Proyección Social
+     *  Ing. Jaime Alberto Gutiérrez Mejía
+     *  2018-II
+     */
+    //**********************************************************
+    //**********************************************************
+    //**********************************************************
+}
+}
+@{
+    ViewBag.Title = "Formulario de Captura de Datos en RAZOR";
+}
+<!-- ********************************************************* -->
+<!-- ********************************************************* -->
+<!-- ********************************************************* -->
+<script type="text/javascript" language="JavaScript">
+    function validarEnvio() {
+        var confirmacion = confirm("¿Desea almacenar los datos? (S/N)");
+
+        if (confirmacion == true) {
+            return (true);
+        }
+        else {
+            alert("Se canceló el envío");
+            return (false);
+        }
+    }
+</script>
+<div id="formularioCreacion" style="padding:20px;">
+    <h2>FORMULARIO DE REGISTRO DE CONTACTO EN RAZOR</h2>
+    <br />
+    <br />
+    <form id="formularioDatos" name="formularioDatos"
+          method="post" action="DisplayCustomer" onsubmit="return validarEnvio();">
+        <table id="tablaVistaCadenas" border="1" style="width:100%" cellpadding="10">
+            <tr>
+                <td style="width: 143px">
+                    <label id="lbl_Code" for="txt_Code">Código Empleado:</label>
+                </td>
+                <td>
+                    <input type="text" id="txt_Code" name="txt_Code"
+                           size="40" placeholder="Digite el código del empleado" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 143px">
+                    <label id="lbl_Nombre" for="txt_Nombre">Nombre Empleado:</label>
+                </td>
+                <td>
+                    <input type="text" id="txt_Nombre" name="txt_Nombre"
+                           size="40" placeholder="Digite el nombre del empleado" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 143px">
+                    <label id="lbl_Edad" for="txt_Edad">Edad Empleado:</label>
+                </td>
+                <td>
+                    <input type="text" id="txt_Edad" name="txt_Edad"
+                           placeholder="Digite la edad del empleado" size="40" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 143px">
+                    <label id="lbl_Salario" for="txt_Salario">Salario Empleado:</label>
+                </td>
+                <td>
+                    <input type="text" id="txt_Salario" name="txt_Salario"
+                           placeholder="Digite el salario" size="40" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" id="botonEnviar" name="botonEnviar" value="Registrar empleado" />
+                    &nbsp;&nbsp;
+                    <input type="reset" id="botonReestablecer" name="botonReestablecer" value="Reestablecer" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!-- ********************************************************* -->
+<!-- ********************************************************* -->
+<!-- ********************************************************* -->
