@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Formulario";
+}
+    <form  method="post">
+        <div id="formulario" style="padding:20px;width:400px;">
+            <h2>Formulario Calculo Salarial</h2>
+            <br />
+            <table id="tablaFormulario" class="table table-bordered table-responsive" >
+                <tr>
+                    <td>
+                        <label>Nombre</label>
+                    </td>
+                    <td>
+                        <input type="text" name="nombreEmpleado" value="@ViewBag.Nombre" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Apellido</label>
+                    </td>
+                    <td>
+                        <input type="text" name="apellidoEmpleado" value="@ViewBag.Apellido" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Número de Horas</label>
+                    </td>
+                    <td>
+                        <input type="number" name="numHorasEmpleado" value="@ViewBag.NumeroHoras" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Valor Hora</label>
+                    </td>
+                    <td>
+                        <input type="number" name="valHoraEmpleado" value="@ViewBag.ValorHora" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Nivel Riesgo</label>
+                    </td>
+                    <td>
+                        <select name="nivelRiesgo">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <button type="submit">Calcular</button>
+                    </td>
+                </tr>
+                <!-- Respuesta -->
+                <tr>
+                    <td>
+                        <label>Sueldo Bruto</label>
+                    </td>
+                    <td>
+                        <label id="sueldoBrutoEmpleado">@ViewBag.SueldoBruto</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Salud</label>
+                    </td>
+                    <td>
+                        <label id="saludEmpleado">@ViewBag.Salud</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Pension</label>
+                    </td>
+                    <td>
+                        <label id="pensionEmpleado">@ViewBag.Pension</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Riesgos Profesionales</label>
+                    </td>
+                    <td>
+                        <label id="riesgosEmpleado">@ViewBag.Riesgos</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Total Descuento</label>
+                    </td>
+                    <td>
+                        <label id="totalDescuentoEmpleado">@ViewBag.TotalDescuentos</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><strong>Sueldo Neto</strong></label>
+                    </td>
+                    <td>
+                        <label id="sueldoNetoEmpleado">@ViewBag.SueldoNeto</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+
+
+
