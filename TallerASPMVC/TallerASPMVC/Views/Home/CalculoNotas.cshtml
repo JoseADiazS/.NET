@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "CalculoNotas";
+}
+
+    <form method="post">
+        <div id="formulario" style="padding:20px;width:600px;">
+            <h2>Formulario Calculo Notas</h2>
+            <br />
+            <table id="tablaFormulario" class="table table-bordered table-responsive">
+                <tr>
+                    <td>
+                        <label>Nombre</label>
+                    </td>
+                    <td>
+                        <input type="text" name="nombreEstudiante" value="@ViewBag.Nombre" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Apellido</label>
+                    </td>
+                    <td>
+                        <input type="text" name="apellidoEstudiante" value="@ViewBag.Apellido" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Nota I</label>
+                    </td>
+                    <td>
+                        <input type="number" name="valNota1" value="@ViewBag.Nota1" />
+                    </td>
+                    <td>
+                        <label>Porcentaje (30 %)</label>
+                    </td>
+                    <td>
+                        <label>@ViewBag.NotaI</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Nota II</label>
+                    </td>
+                    <td>
+                        <input type="number" name="valNota2" value="@ViewBag.Nota2" />
+                    </td>
+                    <td>
+                        <label>Porcentaje (30 %)</label>
+                    </td>
+                    <td>
+                        <label>@ViewBag.NotaII</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Nota III</label>
+                    </td>
+                    <td>
+                        <input type="number" name="valNota3" value="@ViewBag.Nota3" />
+                    </td>
+                    <td>
+                        <label>Porcentaje (40 %)</label>
+                    </td>
+                    <td>
+                        <label>@ViewBag.NotaIII</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><strong>Definitiva</strong></label>
+                    </td>
+                    <td>
+                        <label>@ViewBag.NotaDefinitiva</label>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <button type="submit">Calcular</button>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </form>
